@@ -1,0 +1,10 @@
+{% load static %}
+<html>
+<body>
+	<form action="/updateNew/" method="post">
+	{% csrf_token %}
+	Name:<input type="text" name="name" value={{name}}><br><br>
+	Password:<input type="text" name="password" value={{password}}><br><br>	
+	<input type="submit" value="Login">
+	</form>
+</html>

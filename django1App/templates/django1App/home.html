@@ -1,0 +1,22 @@
+{% load static %}
+<html>
+<center>
+
+{% csrf_token %}
+<img width='1600' height='400' src={% static 'images/image1.jpg' %}>
+<h1>Welcome {{name}}</h1>
+
+<table border='3'>
+<th>Name</th><th>Password</th><th>Delete</th><th>Update</th>
+
+{% for i in db %}
+<tr>
+	<td>{{i.name}}</td>
+	<td>{{i.password}}</td>
+	<td><a href="/delete/?name={{i.name}}">Delete</a></td>
+	<td><a href="/update/?name={{i.name}}">Update</a></td>
+</tr>
+{% endfor %}
+
+</table>
+</html>
